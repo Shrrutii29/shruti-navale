@@ -2,7 +2,6 @@
 
 .hover-char {
   transition: color 0.3s ease;
-  cursor: default;
 }
 
 .hover-char.filled {
@@ -17,5 +16,4 @@
 
 .no-hover-char {
   color: inherit;
-  cursor: default;
 }
