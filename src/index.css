@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.hover-char {
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.hover-char.filled {
+  color: var(--fill-color);
+}
+
+/* Space width preserved */
+.char-space {
+  display: inline-block;
+  width: 0.3em;
+}
+
+.no-hover-char {
+  color: inherit;
+  cursor: default;
+}
