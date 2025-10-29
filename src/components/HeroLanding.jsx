@@ -59,18 +59,18 @@ export default function HeroLanding() {
     <section className="w-screen h-screen bg-black flex items-center justify-start px-8 cursor-wait">
       <div className="w-[90%] max-w-[680px]">
         
-        <h1 className="text-white text-3xl md:text-5xl font-semibold leading-tight">
+        <h1 className="text-white text-2.5xl md:text-5xl font-semibold leading-tight">
           {wrapChars("Hello, I'm ", "intro", false)}
           {wrapChars("Shruti N. !", "intro-name", true)}
         </h1>
 
-        <p className="text-neutral-400 text-3xl md:text-5xl font-semibold leading-tight mt-1">
+        <p className="text-neutral-400 text-2.5xl md:text-5xl font-semibold leading-tight mt-1">
           {wrapChars("I build clean, meaningful", "tag1")}
           <br />
           {wrapChars("digital experiences", "tag2")}
         </p>
 
-        <p className="text-neutral-400 text-3xl md:text-5xl font-semibold leading-tight mt-0.5">
+        <p className="text-neutral-400 text-2.5xl md:text-5xl font-semibold leading-tight mt-0.5">
           {wrapChars("Software Engineer Intern", "role1")}
           <br />
           {wrapChars("at ", "role2")}
