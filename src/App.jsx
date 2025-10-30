@@ -1,7 +1,6 @@
-import HeroLanding from "./components/HeroLanding";
-
+import Home from "./pages/Home";
 function App() {
-  return <HeroLanding />;
+  return <Home />;
 }
 
 export default App;
