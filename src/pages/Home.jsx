@@ -13,7 +13,7 @@ export default function Home() {
 
             {/* SECTION 2 */}
             <section className="relative pb-[55px]">
-                <JourneyMap src="src/assets/journeymap.png" />
+                <JourneyMap src="/journeymap.png" />
                 <WaveSeparator color="#111" />
             </section>
         </>
