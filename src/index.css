@@ -22,3 +22,70 @@ html, body {
 .no-hover-char {
   color: inherit;
 }
+
+/* ---------- Galaxy doodle animations ---------- */
+
+@keyframes doodle-drift-1 {
+  0% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-8px) translateX(4px) rotate(6deg) scale(1.03); }
+  100% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+}
+
+@keyframes doodle-drift-2 {
+  0% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(10px) translateX(-6px) rotate(-6deg) scale(0.98); }
+  100% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: .2; filter: blur(0px); }
+  50% { opacity: 1; filter: blur(0.6px); }
+}
+
+@keyframes shooting {
+  0% { transform: translateX(0) translateY(0) rotate(-12deg) scale(1); opacity: 0; }
+  5% { opacity: 1; }
+  100% { transform: translateX(140vw) translateY(-20vh) rotate(-12deg) scale(.9); opacity: 0; }
+}
+
+/* doodle base */
+.doodle {
+  will-change: transform, opacity;
+}
+
+/* different doodle types use different animations so it appears organic */
+.doodle-star { animation-name: twinkle; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
+.doodle-planet { animation-name: doodle-drift-1; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
+.doodle-ring { animation-name: doodle-drift-2; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
+
+/* control speed via inline style animation-duration and delay */
+/* shooting stars */
+.shooting-star {
+  position: absolute;
+  z-index: 11;
+  pointer-events: none;
+  transform: translateX(0) translateY(0);
+  animation-name: shooting;
+  animation-timing-function: cubic-bezier(.15,.8,.25,1);
+  animation-iteration-count: infinite;
+  /* duration & delay controlled inline by component */
+  opacity: 0;
+}
+
+/* subtle glow for doodles */
+.doodle svg path,
+.doodle svg circle,
+.doodle svg ellipse,
+.doodle svg rect {
+  filter: drop-shadow(0 6px 10px rgba(99,102,241,0.06))
+          drop-shadow(0 2px 6px rgba(59,130,246,0.03));
+}
+
+/* reduce heavy motion for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .doodle-star, .doodle-planet, .doodle-ring, .shooting-star {
+    animation: none !important;
+    opacity: 0.9 !important;
+  }
+}
+
